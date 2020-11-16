@@ -64,7 +64,7 @@ public class Field {
             int x = sc.nextInt();
             System.out.println("Введите координату Y: ");
             int y = sc.nextInt();
-            if (x >= 0 && x <= FIELD_SIZE - 1 && y >= 0 && y <= FIELD_SIZE - 1) {
+            if (checkBorders(x, y)) {
                 startCell.setX(x);
                 startCell.setY(y);
                 if (setStartAndEndCell(startCell, GameObject.START)) {
@@ -81,7 +81,7 @@ public class Field {
             int x = sc.nextInt();
             System.out.println("Введите координату Y: ");
             int y = sc.nextInt();
-            if (x >= 0 && x <= FIELD_SIZE - 1 && y >= 0 && y <= FIELD_SIZE - 1) {
+            if (checkBorders(x, y)) {
                 end.setX(x);
                 end.setY(y);
                 if (setStartAndEndCell(end, GameObject.END)) {
@@ -100,7 +100,7 @@ public class Field {
             int x = sc.nextInt();
             System.out.println("Введите координату Y: ");
             int y = sc.nextInt();
-            if (x >= 0 && x <= FIELD_SIZE - 1 && y >= 0 && y <= FIELD_SIZE - 1) {
+            if (checkBorders(x, y)) {
                 obstacleCell.setX(x);
                 obstacleCell.setY(y);
                 setObstacle(obstacleCell);
@@ -359,6 +359,10 @@ public class Field {
                 endCell.getY() - intersectionPoint.getY() : intersectionPoint.getY() - endCell.getY();
 
         return (horizontalLength + verticalLength) * MULTIPLIER_APPROX;
+    }
+
+    private boolean checkBorders(int x, int y) {
+        return x >= 0 && x <= FIELD_SIZE - 1 && y >= 0 && y <= FIELD_SIZE - 1;
     }
 
 }
