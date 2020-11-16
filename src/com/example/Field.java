@@ -30,7 +30,7 @@ public class Field {
     private int cellSize;
 
     private static final int MULTIPLIER_APPROX = 10;
-    private static final int FIELD_SIZE = 20;
+    private static final int FIELD_SIZE = 100;
     private static final String OBSTACLE_IMG = "X";
     private static final String ACTIVE_IMG = "O";
     private static final String END_IMG = "?";
